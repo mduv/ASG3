@@ -131,7 +131,7 @@ function initTextures() {
         return false;
     }
     image.onload = function () { sendTextureToGLSL(image); };
-    image.src = 'sky.jpg';
+    image.src = 'sky1.jpg';
     return true;
 }
 
@@ -196,20 +196,17 @@ function addActionsForHtmlUI() {
 
 
 function main() {
+    console.log('Hello: ');
 
     setupWebGL();
 
     connectVariablesToGSL();
-
-    console.log('Which Texture:', u_whichTexture);
 
     addActionsForHtmlUI();
 
     document.onkeydown = keydown;
 
     initTextures();
-
-
 
     // Set the color for clearing <canvas>
     gl.clearColor(0.0, 0.0, 0.0, 1.0);
