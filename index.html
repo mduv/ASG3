@@ -1,41 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>My World</title>
-    <!--<link rel="stylesheet" href="blockyAnimal.css">-->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  </head>
+<html>
 
-  <body onload="main()">
-    <canvas id="webgl" width="400" height="400"></canvas>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mohan Assignment 3 For CSE160</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+</head>
 
-    <script src="lib/webgl-utils.js"></script>
-    <script src="lib/webgl-debug.js"></script>
-    <script src="lib/cuon-utils.js"></script>
-    <script src="lib/cuon-matrix-cse160.js"></script>
+<body onload="main()">
+    <section class="section">
+        <div class="container">
+            <h1 class="title">
+                Mohan Assignment 3 For CSE160 (Moon maze)
+            </h1>
 
-    <script src="World.js"></script>
+            <canvas id="webgl" width="600" height="600">
+                Please use a browser that supports "canvas"
+            </canvas>
+            <div class="columns is-half">
+                <div class="column">
+                    <p id='fps'></p>
+                </div>
+                <div class="column">
+                    <p><span class="subtitle">Cool features:</span>
+                    <ul>
+                        <li> Movable camera with mouse</li>
+                        <li>Go higher/lower with shift/space</li>
+                        <li> Multiple textures</li>
+                        <li>Crippling Inefficency that I can't solve</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
 
-    <script src="Point.js"></script>
-    <script src="Triangle.js"></script>
-    <script src="Circle.js"></script>
+
+        </div>
+    </section>
+    <script src="./lib/webgl-utils.js"></script>
+    <script src="./lib/webgl-debug.js"></script>
+    <script src="./lib/cuon-utils.js"></script>
+    <script src="./lib/cuon-matrix-cse160.js"></script>
+    <script src="Camera.js"></script>
     <script src="Cube.js"></script>
+    <script src="World.js"></script>
+    <!-- <script src= "asg2.js"></script> -->
+</body>
 
-    <p>
-      Magenta <Input type="range" min="0" max="100" value="0" class ="slider" id = "magentaSlide">
-      <button type="button" id="animationMagentaOnButton">ON</button>
-      <button type="button" id="animationMagentaOffButton">OFF</button> 
-    <p>
-      Yellow <Input type="range" min="0" max="100" value="0" class ="slider" id = "yellowSlide">
-      <button type="button" id="animationYellowOnButton">ON</button>
-      <button type="button" id="animationYellowOffButton">OFF</button>   
-    <p>  
-      Camera Angle <Input type="range" min="0" max="100" value="0" class ="slider" id = "angleSlide">      
-    <p>
-<br>
-      <!--<p id="numdot"> </p>-->
-
-
-  </body>
 </html>
