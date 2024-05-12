@@ -77,7 +77,6 @@ let camera;
 function main() {
     setupWebGL();
     connectVariablesToGLSL();
-    setUpAllEvents();
     gl.clearColor(0, 0, 0, 1);
     initTextures();
     camera = new Camera();
