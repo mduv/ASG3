@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
@@ -38,6 +38,58 @@
 
         </div>
     </section>
+    <script src="./lib/webgl-utils.js"></script>
+    <script src="./lib/webgl-debug.js"></script>
+    <script src="./lib/cuon-utils.js"></script>
+    <script src="./lib/cuon-matrix-cse160.js"></script>
+    <script src="Camera.js"></script>
+    <script src="Cube.js"></script>
+    <script src="World.js"></script>
+    
+</body>
+
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Mohan's World</title>
+</head>
+
+<p>
+    <h1>Mohan Duvvuri
+        <br>
+        mduvvuri@ucsc.edu
+        <br>
+        Notes to Grader:
+        <ul>
+            This my is my cornfield maze. The goal is to get to the other side without getting lost.
+        </ul>
+    </h1>
+</p>
+
+<body onload="main()">
+    <canvas id="webgl" width="400" height="400">
+        Please use a browser that supports "canvas"
+    </canvas>
+
+    <div class="column">
+        <p><span class="subtitle">Instructions</span>
+        <ul>
+            <li>W - move the camera forward</li>
+            <li> A - move the camera to the left</li>
+            <li>S - move the camera backwards</li>    
+            <li>D - move the camera to the right</li>
+            <li>Use Q (rotate left) & E (rotate right).</li>
+            <li>Rotate camera with the mouse</li>
+        </ul>
+        </p>
+    </div>
+    
     <script src="./lib/webgl-utils.js"></script>
     <script src="./lib/webgl-debug.js"></script>
     <script src="./lib/cuon-utils.js"></script>

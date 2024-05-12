@@ -12,15 +12,12 @@ class Camera {
         this.f = new Vector3();
     }
 
-    moveForward() {
-        let f = this.f;
-        f.set(this.at);
-        f.sub(this.eye);
-        f.normalize();
-        f.mul(this.speed);
-        this.eye.add(f);
-        this.at.add(f);
-        this.update();
+    getDirection() {
+        const direction = new Vector3();
+        direction.set(this.at);
+        direction.sub(this.eye);
+        direction.normalize();
+        return direction;
     }
 
     moveUp() {
@@ -28,25 +25,6 @@ class Camera {
         f.mul(this.speed);
         this.eye.add(f);
         this.at.add(f);
-        this.update();
-    }
-
-    moveDown() {
-        let f = new Vector3([0, 1, 0]);
-        f.mul(this.speed);
-        this.eye.sub(f);
-        this.at.sub(f);
-        this.update();
-    }
-
-    moveBackward() {
-        let b = this.f;
-        b.set(this.eye);
-        b.sub(this.at);
-        b.normalize();
-        b.mul(this.speed);
-        this.eye.add(b);
-        this.at.add(b);
         this.update();
     }
 
@@ -62,15 +40,14 @@ class Camera {
         this.update();
     }
 
-    moveRight() {
+    moveForward() {
         let f = this.f;
         f.set(this.at);
         f.sub(this.eye);
-        let s = Vector3.cross(f, this.up);
-        s.normalize();
-        s.mul(this.speed);
-        this.eye.add(s);
-        this.at.add(s);
+        f.normalize();
+        f.mul(this.speed);
+        this.eye.add(f);
+        this.at.add(f);
         this.update();
     }
 
@@ -83,6 +60,43 @@ class Camera {
         let f_prime = rotationMatrix.multiplyVector3(f);
         f_prime.add(this.eye);
         this.at = f_prime;
+        this.update();
+    }
+
+    
+
+    moveDown() {
+        let f = new Vector3([0, 1, 0]);
+        f.mul(this.speed);
+        this.eye.sub(f);
+        this.at.sub(f);
+        this.update();
+    }
+
+    
+
+    moveRight() {
+        let f = this.f;
+        f.set(this.at);
+        f.sub(this.eye);
+        let s = Vector3.cross(f, this.up);
+        s.normalize();
+        s.mul(this.speed);
+        this.eye.add(s);
+        this.at.add(s);
+        this.update();
+    }
+
+    
+
+    moveBackward() {
+        let b = this.f;
+        b.set(this.eye);
+        b.sub(this.at);
+        b.normalize();
+        b.mul(this.speed);
+        this.eye.add(b);
+        this.at.add(b);
         this.update();
     }
 
@@ -125,12 +139,6 @@ class Camera {
         return this.eye; // Return the position of the camera
     }
 
-    getDirection() {
-        const direction = new Vector3();
-        direction.set(this.at);
-        direction.sub(this.eye);
-        direction.normalize();
-        return direction;
-    }
+    
 
 }

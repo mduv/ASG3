@@ -5,47 +5,42 @@ class Cube {
         this.matrix = new Matrix4();
         this.textureNum = -2;
 
-        // Break down of information per line
-        // 0-2: XYZ
-        // 3-4: UV
-        // 5-8: RGBA
         this.verticies = new Float32Array([
-            // Front 
             -0.5, -0.5, -0.5, 0, 0, this.color[0] * 1, this.color[1] * 1, this.color[2] * 1, this.color[3],
             0.5, 0.5, -0.5, 1, 1, this.color[0] * 1, this.color[1] * 1, this.color[2] * 1, this.color[3],
             0.5, -0.5, -0.5, 1, 0, this.color[0] * 1, this.color[1] * 1, this.color[2] * 1, this.color[3],
             -0.5, -0.5, -0.5, 0, 0, this.color[0] * 1, this.color[1] * 1, this.color[2] * 1, this.color[3],
             -0.5, 0.5, -0.5, 0, 1, this.color[0] * 1, this.color[1] * 1, this.color[2] * 1, this.color[3],
             0.5, 0.5, -0.5, 1, 1, this.color[0] * 1, this.color[1] * 1, this.color[2] * 1, this.color[3],
-            // Back
+
             -0.5, -0.5, 0.5, 0, 0, this.color[0] * 0.8, this.color[1] * 0.8, this.color[2] * 0.8, this.color[3],
             0.5, 0.5, 0.5, 1, 1, this.color[0] * 0.8, this.color[1] * 0.8, this.color[2] * 0.8, this.color[3],
             0.5, -0.5, 0.5, 1, 0, this.color[0] * 0.8, this.color[1] * 0.8, this.color[2] * 0.8, this.color[3],
             -0.5, -0.5, 0.5, 0, 0, this.color[0] * 0.8, this.color[1] * 0.8, this.color[2] * 0.8, this.color[3],
             -0.5, 0.5, 0.5, 0, 1, this.color[0] * 0.8, this.color[1] * 0.8, this.color[2] * 0.8, this.color[3],
             0.5, 0.5, 0.5, 1, 1, this.color[0] * 0.8, this.color[1] * 0.8, this.color[2] * 0.8, this.color[3],
-            // Left
+
             -0.5, -0.5, -0.5, 0, 0, this.color[0] * 0.9, this.color[1] * 0.9, this.color[2] * 0.9, this.color[3],
             -0.5, 0.5, 0.5, 1, 1, this.color[0] * 0.9, this.color[1] * 0.9, this.color[2] * 0.9, this.color[3],
             -0.5, -0.5, 0.5, 1, 0, this.color[0] * 0.9, this.color[1] * 0.9, this.color[2] * 0.9, this.color[3],
             -0.5, -0.5, -0.5, 0, 0, this.color[0] * 0.9, this.color[1] * 0.9, this.color[2] * 0.9, this.color[3],
             -0.5, 0.5, -0.5, 0, 1, this.color[0] * 0.9, this.color[1] * 0.9, this.color[2] * 0.9, this.color[3],
             -0.5, 0.5, 0.5, 1, 1, this.color[0] * 0.9, this.color[1] * 0.9, this.color[2] * 0.9, this.color[3],
-            // Right
+
             0.5, -0.5, -0.5, 0, 0, this.color[0] * 0.7, this.color[1] * 0.7, this.color[2] * 0.7, this.color[3],
             0.5, 0.5, 0.5, 1, 1, this.color[0] * 0.7, this.color[1] * 0.7, this.color[2] * 0.7, this.color[3],
             0.5, -0.5, 0.5, 1, 0, this.color[0] * 0.7, this.color[1] * 0.7, this.color[2] * 0.7, this.color[3],
             0.5, -0.5, -0.5, 0, 0, this.color[0] * 0.7, this.color[1] * 0.7, this.color[2] * 0.7, this.color[3],
             0.5, 0.5, -0.5, 0, 1, this.color[0] * 0.7, this.color[1] * 0.7, this.color[2] * 0.7, this.color[3],
             0.5, 0.5, 0.5, 1, 1, this.color[0] * 0.7, this.color[1] * 0.7, this.color[2] * 0.7, this.color[3],
-            // Top
+
             -0.5, 0.5, -0.5, 0, 0, this.color[0] * 0.95, this.color[1] * 0.95, this.color[2] * 0.95, this.color[3],
             0.5, 0.5, 0.5, 1, 1, this.color[0] * 0.95, this.color[1] * 0.95, this.color[2] * 0.95, this.color[3],
             0.5, 0.5, -0.5, 1, 0, this.color[0] * 0.95, this.color[1] * 0.95, this.color[2] * 0.95, this.color[3],
             -0.5, 0.5, -0.5, 0, 0, this.color[0] * 0.95, this.color[1] * 0.95, this.color[2] * 0.95, this.color[3],
             -0.5, 0.5, 0.5, 0, 1, this.color[0] * 0.95, this.color[1] * 0.95, this.color[2] * 0.95, this.color[3],
             0.5, 0.5, 0.5, 1, 1, this.color[0] * 0.95, this.color[1] * 0.95, this.color[2] * 0.95, this.color[3],
-            // Bottom
+
             -0.5, -0.5, -0.5, 0, 0, this.color[0] * 0.5, this.color[1] * 0.5, this.color[2] * 0.5, this.color[3],
             0.5, -0.5, 0.5, 1, 1, this.color[0] * 0.5, this.color[1] * 0.5, this.color[2] * 0.5, this.color[3],
             0.5, -0.5, -0.5, 1, 0, this.color[0] * 0.5, this.color[1] * 0.5, this.color[2] * 0.5, this.color[3],
@@ -76,7 +71,6 @@ function drawCube(verticies, matrix, texNum) {
 
 function initCubeBuffer() {
 
-    // Create a buffer object
     vertexBuffer = gl.createBuffer();
     if (!vertexBuffer) {
         console.log('Failed to create the buffer object');
@@ -84,7 +78,6 @@ function initCubeBuffer() {
     }
 
     let FLOAT_SIZE = Float32Array.BYTES_PER_ELEMENT;
-    // Bind the buffer object to target
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
 
 
