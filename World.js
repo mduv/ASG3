@@ -324,13 +324,13 @@ function initTextures() {
     }
 
     image1.onload = function () { loadTexture(image1, u_Sampler1, 1); };
-    image1.src = "./images/sky1.jpg";
+    image1.src = "sky1.jpg";
 
     image2.onload = function () { loadTexture(image2, u_Sampler2, 2); };
-    image2.src = "./images/dry2.jpeg";
+    image2.src = "dry2.jpeg";
 
     image3.onload = function () { loadTexture(image3, u_Sampler3, 3); };
-    image3.src = "./images/bush.jpeg";
+    image3.src = "bush.jpeg";
 
     return true;
 }
